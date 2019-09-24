@@ -1,0 +1,48 @@
+<div class="row ">
+    <div>One Way Trip</div>
+    <table class="table col-4">
+        <thead>
+            <tr>
+                <th>Flight Name</th>
+                <th>From</th>
+                <th>To.</th>
+                <th>Price.</th>
+                <th>Date</th>
+              
+            </tr>
+            <tr *ngFor="let flight of OneWayTrip; index as i; last as lastindex">
+                <td>{{flight.name}}</td>
+                <td>{{flight.from}}</td>
+                <td>{{flight.to}}</td>
+                <td>{{flight.price}}</td>
+                <td>{{flight.on}}</td>
+              </tr>
+        </thead>
+        <tbody id="flights_info"></tbody>
+    </table>
+<br> <br>
+
+<div class=" col-4" *ngIf = "TwoWayTrip">
+    <div>Two Way Trip</div>
+    <table class="table " >
+        <thead>
+            <tr>
+                <th>Flight Name</th>
+                <th>From</th>
+                <th>To.</th>
+                <th>Price.</th>
+                <th>Date</th>
+              
+            </tr>
+            <tr *ngFor="let flight of TwoWayTrip; index as i; last as lastindex">
+                <td>{{flight.name}}</td>
+                <td>{{flight.from}}</td>
+                <td>{{flight.to}}</td>
+                <td>{{flight.price}}</td>
+                <td>{{flight.on}}</td>
+              </tr>
+        </thead>
+        <tbody id="flights_info"></tbody>
+    </table>
+</div>
+</div>

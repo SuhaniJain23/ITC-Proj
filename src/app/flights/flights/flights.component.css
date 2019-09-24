@@ -1,0 +1,33 @@
+.createProjHeader{    border-bottom: 1px solid #ededed;}
+.addProjTxt{padding: 1.5rem 8px;}
+
+/*** css for main content **/
+.lightGrey{color:#dfdfdf;}
+.createProjContent .lightGrey{  padding: 8rem 1.5rem;}
+.createProjContent img{width:15%;}
+
+.abtSite{margin-top:40px;text-decoration: underline}
+.blankPageImg{margin-top:60px}
+
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 10px;
+  }
+  
+  .mat-slider-horizontal {
+    width: 300px;
+  }
+  
+  .mat-slider-vertical {
+    height: 300px;
+  }

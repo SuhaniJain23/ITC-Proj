@@ -1,0 +1,101 @@
+
+<div> For testing purpose, choose from: Delhi, to: Bombay on 3rd Sept and return on 4th Sept                           
+    </div>
+    <br > 
+    <label id="example-radio-group-label">Select the route</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  (change)="onChange($event.value)">
+  <mat-radio-button value="one">One way</mat-radio-button>
+  <mat-radio-button value="Two">Two way</mat-radio-button>
+</mat-radio-group>
+<div *ngIf = "route"> 
+                <body role="document">
+                        <div class="container" >
+                            <div class="row">
+                               
+                                <br>
+                                <div class="col-4 " *ngIf = "flightsForm1">
+                                    <form [formGroup]="flightsForm1">   
+                                      <div class="form-group">
+                                            <label for="from">From</label>
+                                            <select class="form-control" id="from" *ngIf = "flightsForm1"
+                                            formControlName="From">
+                                                <option></option>
+                                                <option value="BOM">Mumbai - BOM</option>
+                                                <option value="DEL">Delhi - DEL</option>
+                                                <option value="BLR">Bangalore - BLR</option>
+                                                <option value="PUN">Pune - PUN</option>
+                                                <option value="KOL">Kolkatta - KOL</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <div class="form-group">
+                                            <label for="to">To</label>
+                                            <select class="form-control" id="to" *ngIf = "flightsForm1"
+                                            formControlName="To"  >
+                                                <option></option>
+                                                <option value="BOM">Mumbai - BOM</option>
+                                                <option value="DEL">Delhi - DEL</option>
+                                                <option value="BLR">Bangalore - BLR</option>
+                                                <option value="PUN">Pune - PUN</option>
+                                                <option value="KOL">Kolkatta - KOL</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <div>Departure Date</div>
+                                     
+                                            <input matInput [matDatepicker]="picker" [min] = "todaydate.value" 
+                                            formControlName="On" placeholder="Choose a date"  
+                                            >
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                            <br>
+                                            <div>Return Date</div>
+                                         
+                                        <div *ngIf = 'route == "Two"' class="form-group">
+                                            <input matInput [matDatepicker]="picker" placeholder="End Date" 
+                                            formControlName="Return"  
+                                            [min]="body12.return.value">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <label for="returndate">Price</label>
+                                            <mat-slider
+                        class="example-margin"
+                        [disabled]="disabled"
+                        [invert]="invert"
+                        [max]="max"
+                        [min]="min" 
+                        formControlName="Price"
+                        [step]="step"
+                        thumbLabel
+                        [tickInterval]="tickInterval"
+                        
+                        [vertical]="vertical"
+                        >
+                    </mat-slider>
+                                        </div>
+                                        <button type="button" id="search-flights" 
+                                         class="btn btn-default" (click)="onSubmit(flightsForm1.value)">Submit</button>
+                                    </form>
+                                </div>
+                                <div *ngIf = "showList" class="col-4 column">
+                                   
+                                    <flight-list></flight-list>
+                                </div>
+                            </div>
+                        </div>
+                <br>
+                    <script type="text/javascript">
+                        FlightSearch.init();
+                    </script>
+                    </body>
+
+   
+
+    
+</div>
